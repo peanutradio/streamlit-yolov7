@@ -11,7 +11,13 @@ import pandas as pd
 from model_utils import get_yolo, color_picker_fn, get_system_stat
 from ultralytics import YOLO
 
-
+#페이지 기본 설정
+st.set_page_config(
+    page_icon=':병아리:',
+    page_title='Bird or Drone')
+#페이지 헤더, 서브헤더 제목 설정
+st.header("데이터를 보여조:단안경을_쓴_얼굴:")
+st.subheader("Bird:병아리: or Drone:비행접시:")
 p_time = 0
 
 st.sidebar.title('Settings')
@@ -21,7 +27,7 @@ model_type = st.sidebar.selectbox(
 )
 
 st.title(f'{model_type} Predictions')
-sample_img = cv2.imread('logo.jpg')
+sample_img = cv2.imread('yolo_logo.png')
 FRAME_WINDOW = st.image(sample_img, channels='BGR')
 cap = None
 
